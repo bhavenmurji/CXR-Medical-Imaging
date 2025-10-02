@@ -1,6 +1,6 @@
 {
   "name": "CXR Medical Imaging Environment",
-  "image": "mcr.microsoft.com/devcontainers/python:3.11-bullseye",
+  "image": "mcr.microsoft.com/devcontainers/python:3.11",
 
   "customizations": {
     "vscode": {
@@ -32,7 +32,7 @@
     "ghcr.io/devcontainers/features/github-cli:1": {}
   },
 
-  "postCreateCommand": "pip install --upgrade pip && pip install -r requirements.txt",
+  "postCreateCommand": "python3 -m ensurepip --upgrade && python3 -m pip install --upgrade pip && python3 -m pip install -r requirements.txt",
 
   "forwardPorts": [8888],
 
