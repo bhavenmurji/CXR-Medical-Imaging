@@ -1,0 +1,39 @@
+# Medical Imaging Libraries
+pydicom==2.4.4
+SimpleITK==2.3.1
+nibabel==5.2.0
+scikit-image==0.22.0
+opencv-python-headless==4.8.1.78
+
+# Deep Learning
+torch==2.1.2
+torchvision==0.16.2
+tensorflow==2.15.0
+
+# Data Processing
+numpy==1.26.3
+pandas==2.1.4
+scipy==1.11.4
+Pillow==10.2.0
+
+# Visualization
+matplotlib==3.8.2
+seaborn==0.13.1
+plotly==5.18.0
+
+# Medical Imaging Specific
+pylibjpeg==2.0.0
+pylibjpeg-libjpeg==2.0.0
+python-gdcm==3.0.23
+
+# Dataset Tools
+kaggle==1.5.16
+gdown==4.7.1
+requests==2.31.0
+tqdm==4.66.1
+
+# Utilities
+jupyter==1.0.0
+ipykernel==6.28.0
+python-dotenv==1.0.0
+pyyaml==6.0.1
