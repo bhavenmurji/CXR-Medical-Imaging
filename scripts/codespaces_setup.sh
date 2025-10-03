@@ -5,18 +5,16 @@ set -e
 
 echo "🚀 Setting up Python environment in Codespaces..."
 
-# Download and install pip
-echo "📦 Installing pip..."
-curl https://bootstrap.pypa.io/get-pip.py -o /tmp/get-pip.py
-python3 /tmp/get-pip.py --user
-rm /tmp/get-pip.py
+# Create virtual environment
+echo "📦 Creating virtual environment..."
+python3 -m venv venv
 
-# Add pip to PATH for current session
-export PATH="$HOME/.local/bin:$PATH"
+# Activate virtual environment
+source venv/bin/activate
 
 # Upgrade pip
 echo "⬆️  Upgrading pip..."
-python3 -m pip install --upgrade pip --user
+pip install --upgrade pip
 
 # Create directories
 echo "📁 Creating directories..."
@@ -26,7 +24,7 @@ mkdir -p models outputs/{logs,reports,visualizations} temp
 
 # Install requirements
 echo "📚 Installing Python packages (this may take a few minutes)..."
-python3 -m pip install -r requirements.txt --user
+pip install -r requirements.txt
 
 echo ""
 echo "✅ Setup complete!"
@@ -35,7 +33,11 @@ echo "💾 Available disk space:"
 df -h /workspaces
 
 echo ""
+echo "⚡ IMPORTANT: Activate the virtual environment before running Python:"
+echo "   source venv/bin/activate"
+echo ""
 echo "🎯 Next steps:"
-echo "   1. Configure Kaggle credentials: mkdir -p ~/.kaggle && nano ~/.kaggle/kaggle.json"
-echo "   2. Run dataset downloads: ./scripts/download_datasets.sh nih-cxr14"
-echo "   3. Process datasets with Python scripts"
+echo "   1. Activate venv: source venv/bin/activate"
+echo "   2. Configure Kaggle credentials: mkdir -p ~/.kaggle && nano ~/.kaggle/kaggle.json"
+echo "   3. Run dataset downloads: ./scripts/download_datasets.sh nih-cxr14"
+echo "   4. Process datasets with Python scripts"
